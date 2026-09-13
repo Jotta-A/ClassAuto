@@ -21,7 +21,9 @@ Este é um sistema desenvolvido em **TypeScript** que simula a lógica de negóc
 - **Tipagem Estática:** Uso de *Interfaces*, *Enums* (para tipos de combustível e categorias de CNH) e *Union Types*.
 - **Abstração e Herança:** Criação de uma classe base `Veiculo` que serve de molde para subclasses específicas (`Carro`, `Moto`, `Caminhao`).
 - **Polimorfismo:** Sobrescrita do método de cálculo de aluguel, permitindo que cada tipo de veículo aplique sua própria regra de precificação.
+- **Encapsulamento:** Proteção do estado interno das instâncias (como o status de "alugado" ou "disponível"), garantindo que as alterações ocorram apenas através de métodos autorizados.
+
+  
 
 - ---
 *Projeto criado para fins de estudo e composição de portfólio.*
-- **Encapsulamento:** Proteção do estado interno das instâncias (como o status de "alugado" ou "disponível"), garantindo que as alterações ocorram apenas através de métodos autorizados.
