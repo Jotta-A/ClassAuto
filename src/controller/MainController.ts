@@ -13,5 +13,8 @@ export default class MainController {
     return new Client();
   }
 
-  public getAllClients(): string {}
+  //public getAllClients(): void[] {
+    //for(let i=0; i < this.controller.database.clients.length; i++)
+      //console.log(this.controller.database.clients[i]);
+  //}
 }

@@ -14,6 +14,5 @@ class MainController {
     getNewClient() {
         return new Client_1.default();
     }
-    getAllClients() { }
 }
 exports.default = MainController;
