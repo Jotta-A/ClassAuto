@@ -13,19 +13,19 @@ class MainScreen {
     openFirstScreen() {
         let option = 0;
         while (option != 3) {
-            option = Number(this.prompt("DIGITE:\n1 para Cadastrar\n2.para Alugar\n3.para Listar\n4.para Sair"));
+            option = Number(this.prompt("DIGITE:\n1 para Alugar um veiculo\n2.para Listar veiculos disponiveis\n3.para Sair\n4"));
             switch (option) {
                 case 1:
                     this.registerScreen();
                     break;
                 case 2:
-                    this.rentScreen();
+                    //this.rentScreen();
                     break;
                 case 3:
-                    console.log(this.getAllClients());
+                    //console.log(this.getAllClients());
                     break;
                 default:
-                    console.log("Entre com um número entre 1 e 4");
+                    console.log("Entre com um número entre 1 e 3");
                     break;
             }
             //console.clear();
@@ -39,13 +39,9 @@ class MainScreen {
         // agora preciso guardar o cadastro no BD
         this.controller.database.clients.push(client);
         //this.controller.showAllClients();
-    }
-    //this.controller.showAllClients();
-    getAllClients() {
-        for (let i = 0; i < this.controller.database.clients.length; i++)
-            console.log(this.controller.database.clients[i]);
+        //private getAllClients(): string[] {
+        //for(let i=0; i < this.controller.database.clients.length; i++)
+        //             console.log(this.controller.database.clients[i]);}
     }
 }
 exports.default = MainScreen;
-rentScreen();
-void {};

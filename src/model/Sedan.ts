@@ -1,4 +1,4 @@
-// Sedan subclass: Includes a standard insurance fee on top of the daily rate
+// Sedan subclass: standard insurance fee on top of the daily rate
 class Sedan extends Vehicle {
   private insuranceFee = 30;
 

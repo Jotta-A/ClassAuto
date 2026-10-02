@@ -2,7 +2,7 @@
 abstract class Vehicle {
   constructor(
     public plate: string,
-    public model: string,
+    //public model: string,
     public year: number,
     protected baseDailyRate: number
   ) {}
@@ -12,6 +12,8 @@ abstract class Vehicle {
   // Abstract method that forces subclasses to define their own rental calculation
   abstract calcRentValue(days: number): number;
 
+
+  //TIRAR DAQUI!!!
   // Checks if the vehicle is available for rent
   public isAvailable(): boolean {
     return !this.rented;
