@@ -1,8 +1,11 @@
-import Vehicle from "./Vehicle";
-import RentCalculator from "./RentCalculator";
-
-export default class Hatch extends Vehicle {
+// Hatch subclass: Uses a simple fixed daily rate
+class Hatch extends Vehicle {
   constructor(plate: string, model: string, year: number, baseDailyRate: number = 50) {
-    super(plate, model, year, baseDailyRate, new RentCalculator());
+    super(plate, model, year, baseDailyRate);
+  }
+
+  calcRentValue(days: number): number {
+    return days * this.baseDailyRate;
   }
 }
+//SO MAIS TESTES OIGNORARRR
