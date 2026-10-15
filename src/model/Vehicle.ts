@@ -1,35 +1,27 @@
-// Abstract base class defining the common structure
-abstract class Vehicle {
+import Availability from "./Availability";
+import RentCalculator from "./RentCalculator";
+
+export default abstract class Vehicle {
+  public availability: Availability;
+  public rentCalculator: RentCalculator;
+
   constructor(
     public plate: string,
-    //public model: string,
+    public model: string,
     public year: number,
-    protected baseDailyRate: number
-  ) {}
-
-  protected rented: boolean = false;
-
-  // Abstract method that forces subclasses to define their own rental calculation
-  abstract calcRentValue(days: number): number;
-
-
-  //TIRAR DAQUI!!!
-  // Checks if the vehicle is available for rent
-  public isAvailable(): boolean {
-    return !this.rented;
+    public baseDailyRate: number,
+    rentCalculator: RentCalculator = new RentCalculator()
+  ) {
+    this.availability = new Availability();
+    this.rentCalculator = rentCalculator;
   }
 
-  // Marks the vehicle as rented
+  // Delegação dos métodos para o objeto availability
   public rent(): void {
-    if (this.isAvailable()) {
-      this.rented = true;
-    } else {
-      console.log("Vehicle is already rented.");
-    }
+    this.availability.rent();
   }
 
-  // Returns the vehicle to available status
   public returnVehicle(): void {
-    this.rented = false;
+    this.availability.returnVehicle();
   }
 }

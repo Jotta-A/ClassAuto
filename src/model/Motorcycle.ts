@@ -1,10 +1,8 @@
-// Motorcycle subclass: Uses a simple fixed daily rate
-class Motorcycle extends Vehicle {
-  constructor(plate: string, model: string, year: number, baseDailyRate: number = 40) {
-    super(plate, model, year, baseDailyRate);
-  }
+import Vehicle from "./Vehicle";
+import RentCalculator from "./RentCalculator";
 
-  calcRentValue(days: number): number {
-    return days * this.baseDailyRate;
+export default class Motorcycle extends Vehicle {
+  constructor(plate: string, model: string, year: number, baseDailyRate: number = 40) {
+    super(plate, model, year, baseDailyRate, new RentCalculator());
   }
 }
