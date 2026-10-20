@@ -1,4 +1,12 @@
-export default class Availability {
+export interface IAvailability {
+  isAvailable(): boolean;
+  isAvailable(detailed: boolean): string | boolean;
+  isAvailable(detailed?: boolean): string | boolean;
+  rent(): void;
+  returnVehicle(): void;
+}
+
+export default class Availability implements IAvailability {
   private rented: boolean = false;
 
   // Sobrecarga (Overloading)

@@ -1,3 +1,5 @@
+import Vehicle from "./Vehicle";
+
 // Hatch subclass: Uses a simple fixed daily rate
 class Hatch extends Vehicle {
   constructor(plate: string, model: string, year: number, baseDailyRate: number = 50) {

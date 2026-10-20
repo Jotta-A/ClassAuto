@@ -1,19 +1,20 @@
-import Availability from "./Availability";
-import RentCalculator from "./RentCalculator";
+import Availability, { IAvailability } from "./Availability";
+import RentCalculator, { IRentCalculator } from "./RentCalculator";
 
 export default abstract class Vehicle {
-  public availability: Availability;
-  public rentCalculator: RentCalculator;
+  public availability: IAvailability;
+  public rentCalculator: IRentCalculator;
 
   constructor(
     public plate: string,
     public model: string,
     public year: number,
     public baseDailyRate: number,
-    rentCalculator: RentCalculator = new RentCalculator()
+    rentCalculator: IRentCalculator = new RentCalculator(),
+    availability: IAvailability = new Availability()
   ) {
-    this.availability = new Availability();
     this.rentCalculator = rentCalculator;
+    this.availability = availability;
   }
 
   // Delegação dos métodos para o objeto availability
@@ -23,5 +24,12 @@ export default abstract class Vehicle {
 
   public returnVehicle(): void {
     this.availability.returnVehicle();
+  }
+
+  // Delegação dos métodos para o objeto rentCalculator
+  public calculateRent(days: number, discount?: number): number {
+    return discount !== undefined
+      ? this.rentCalculator.calculate(days, this.baseDailyRate, discount)
+      : this.rentCalculator.calculate(days, this.baseDailyRate);
   }
 }
