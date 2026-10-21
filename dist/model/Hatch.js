@@ -13,4 +13,5 @@ class Hatch extends Vehicle_1.default {
         return days * this.baseDailyRate;
     }
 }
+exports.default = Hatch;
 //SO MAIS TESTES OIGNORARRR
